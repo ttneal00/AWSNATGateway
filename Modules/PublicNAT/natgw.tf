@@ -4,7 +4,7 @@ resource "aws_nat_gateway" "nat" {
 
   tags = var.tags
 
-  
+
 }
 
 output "id" {

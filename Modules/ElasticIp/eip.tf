@@ -1,13 +1,13 @@
 resource "aws_eip" "eip" {
   network_interface = var.network_interface
-        tags = var.tags
-  
+  tags              = var.tags
+
 }
 
 output "EipPublicIP" {
-    value = aws_eip.eip.public_ip
+  value = aws_eip.eip.public_ip
 
-  
+
 }
 
 output "EipID" {

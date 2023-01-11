@@ -7,5 +7,5 @@ variable "algorithm" {
 }
 
 variable "key_name" {
-  
+
 }

@@ -1,5 +1,5 @@
 variable "tags" {
-  
+
 }
 
 variable "network_interface" {

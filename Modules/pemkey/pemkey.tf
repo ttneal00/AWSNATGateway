@@ -1,10 +1,10 @@
 resource "tls_private_key" "privkey" {
   algorithm = var.algorithm
-  rsa_bits = var.rsa_bits
+  rsa_bits  = var.rsa_bits
 }
 
 resource "aws_key_pair" "kp" {
-  key_name = var.key_name
+  key_name   = var.key_name
   public_key = tls_private_key.privkey.public_key_openssh
 
   provisioner "local-exec" {
@@ -13,8 +13,8 @@ resource "aws_key_pair" "kp" {
 }
 
 resource "local_file" "ssh_key" {
-    filename = "${var.key_name}.pem"
-    content = tls_private_key.privkey.private_key_pem
+  filename = "${var.key_name}.pem"
+  content  = tls_private_key.privkey.private_key_pem
 }
 
 output "id" {
